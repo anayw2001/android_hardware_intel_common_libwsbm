@@ -26,20 +26,8 @@ LOCAL_C_INCLUDES :=            \
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE:= libwsbm
 LOCAL_SHARED_LIBRARIES:= libdrm
+LOCAL_EXPORT_HEADER_LIBRARY_HEADERS := intel_libwsbm_headers
 include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_COPY_HEADERS_TO := libwsbm/wsbm
-LOCAL_COPY_HEADERS :=          \
-   wsbm_atomic.h           \
-   wsbm_driver.h           \
-   wsbm_fencemgr.h         \
-   wsbm_manager.h          \
-   wsbm_mm.h           \
-   wsbm_pool.h         \
-   wsbm_priv.h         \
-   wsbm_util.h
-include $(BUILD_COPY_HEADERS)
 
 endif # ($(ENABLE_IMG_GRAPHICS),true)
 
